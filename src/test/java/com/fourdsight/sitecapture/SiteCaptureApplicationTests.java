@@ -1,33 +1,36 @@
+/*-----------------------------------------------------------
+ * Project : SiteCapture
+ * Organization : Softist (http://www.softist.com.tr)
+ * Contents :
+ *
+ *-----------------------------------------------------------
+ * Copyright (c) 2018 Softist All Rights Reserved.
+ *-----------------------------------------------------------
+ * Revision History:
+ * who                  when               what
+ * Metin Yavuz(CreByM) Sep 10, 2018	Created
+ *-----------------------------------------------------------
+ */
 package com.fourdsight.sitecapture;
 
-import com.fourdsight.sitecapture.website.SiteStateEnum;
+import com.fourdsight.sitecapture.website.dto.SiteStateEnum;
 import com.fourdsight.sitecapture.website.WebsiteService;
 import com.fourdsight.sitecapture.website.dto.Website;
-import org.apache.commons.io.FileUtils;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
-import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 import java.util.stream.Collectors;
 
+/**
+ * @author Metin Yavuz(CreByM)
+ */
 //@RunWith(SpringRunner.class)
 //@SpringBootTest
-public class SitecaptureApplicationTests {
+public class SiteCaptureApplicationTests {
 
 	private WebsiteService websiteService;
 	private String[] urls = {"http://www.sanalmarket.com.tr","www.huriyet.com.tr","http://www.ntv.com.tr","http://www.hurriyet.com.tr","http://www.google.com","http://www.metinyavuz.net"};
@@ -42,7 +45,7 @@ public class SitecaptureApplicationTests {
 	}
 
 	@Test
-	public void TestGoogle(){
+	public void testWebsiteState(){
 		// Creating Future Stream
 		List<CompletableFuture<Website>> futures = new ArrayList();
 		for(String url:urls){

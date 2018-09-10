@@ -1,3 +1,16 @@
+/*-----------------------------------------------------------
+ * Project : SiteCapture
+ * Organization : Softist (http://www.softist.com.tr)
+ * Contents :
+ *
+ *-----------------------------------------------------------
+ * Copyright (c) 2018 Softist All Rights Reserved.
+ *-----------------------------------------------------------
+ * Revision History:
+ * who                  when               what
+ * Metin Yavuz(CreByM) Sep 10, 2018	Created
+ *-----------------------------------------------------------
+ */
 package com.fourdsight.sitecapture.website.capture;
 
 import org.apache.commons.io.FileUtils;
@@ -8,15 +21,25 @@ import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
 import java.io.File;
 import java.io.IOException;
 
+/**
+ * @author Metin Yavuz(CreByM)
+ */
+
+@Component
 public class WebsiteCaptureProcessor {
 
-    private static Logger log = LoggerFactory.getLogger(WebsiteCaptureProcessor.class);
+    @Value("${website.screen.upload.path}")
+    private String uploadPath="./upload/";
 
-    public static CaptureState captureWebsiteScreen(String url,String uploadPath) {
+    private Logger log = LoggerFactory.getLogger(this.getClass());
+
+    public CaptureState captureWebsiteScreen(String url) {
         CaptureState urlState = new CaptureState(url);
 
         // Open ChromeDriver
@@ -27,7 +50,7 @@ public class WebsiteCaptureProcessor {
             driver.manage().window().maximize();
             driver.get(url);
 
-            urlState.setImagePath(WebsiteCaptureProcessor.captureScreenShot(driver,uploadPath));
+            urlState.setImagePath(captureScreenShot(driver));
         }
         catch (IOException io) {
             log.error("Website Service getting a web drive exception for url:" + url, io);
@@ -48,14 +71,18 @@ public class WebsiteCaptureProcessor {
         return urlState;
     }
 
-    public static String captureScreenShot(WebDriver driver,String uploadPath) throws IOException {
+    public String captureScreenShot(WebDriver driver) throws IOException {
         // Take screenshot and store as a file format
         File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 
         String fileName =  System.currentTimeMillis() + ".png";
         // now copy the screenshot to desired location using copyFile method
         FileUtils.copyFile(src, new File(uploadPath + fileName));
-        return fileName;
+        return "/site/screenshot/" + fileName;
+    }
+
+    public String getUploadPath(){
+        return uploadPath;
     }
 
 }

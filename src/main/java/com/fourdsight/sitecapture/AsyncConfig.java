@@ -1,3 +1,16 @@
+/*-----------------------------------------------------------
+ * Project : SiteCapture
+ * Organization : Softist (http://www.softist.com.tr)
+ * Contents :
+ *
+ *-----------------------------------------------------------
+ * Copyright (c) 2018 Softist All Rights Reserved.
+ *-----------------------------------------------------------
+ * Revision History:
+ * who                  when               what
+ * Metin Yavuz(CreByM) Sep 10, 2018	Created
+ *-----------------------------------------------------------
+ */
 package com.fourdsight.sitecapture;
 
 import org.springframework.beans.factory.annotation.Value;
@@ -7,6 +20,9 @@ import org.springframework.core.task.TaskExecutor;
 import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 
+/**
+ * @author Metin Yavuz(CreByM)
+ */
 @Configuration
 @EnableAsync
 public class AsyncConfig {

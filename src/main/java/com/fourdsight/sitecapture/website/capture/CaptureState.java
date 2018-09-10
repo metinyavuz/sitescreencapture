@@ -1,4 +1,21 @@
+/*-----------------------------------------------------------
+ * Project : SiteCapture
+ * Organization : Softist (http://www.softist.com.tr)
+ * Contents :
+ *
+ *-----------------------------------------------------------
+ * Copyright (c) 2018 Softist All Rights Reserved.
+ *-----------------------------------------------------------
+ * Revision History:
+ * who                  when               what
+ * Metin Yavuz(CreByM) Sep 10, 2018	Created
+ *-----------------------------------------------------------
+ */
 package com.fourdsight.sitecapture.website.capture;
+
+/**
+ * @author Metin Yavuz(CreByM)
+ */
 
 public class CaptureState {
     private String url;
