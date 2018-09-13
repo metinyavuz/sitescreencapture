@@ -11,14 +11,14 @@
  * Metin Yavuz(CreByM) Sep 10, 2018	Created
  *-----------------------------------------------------------
  */
-package com.fourdsight.sitecapture.website;
+package com.softist.sitecapture.website;
 
-import com.fourdsight.sitecapture.mq.Sender;
-import com.fourdsight.sitecapture.website.capture.CaptureState;
-import com.fourdsight.sitecapture.website.capture.WebsiteCaptureProcessor;
-import com.fourdsight.sitecapture.website.dto.SiteStateEnum;
-import com.fourdsight.sitecapture.website.dto.Website;
-import com.fourdsight.sitecapture.website.util.ValidationUtil;
+import com.softist.sitecapture.mq.Sender;
+import com.softist.sitecapture.website.capture.CaptureState;
+import com.softist.sitecapture.website.capture.WebsiteCaptureProcessor;
+import com.softist.sitecapture.website.dto.SiteStateEnum;
+import com.softist.sitecapture.website.dto.Website;
+import com.softist.sitecapture.website.util.ValidationUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -91,5 +91,13 @@ public class WebsiteService {
         else
             log.info("getWebsiteScreenShot file name not valid , file:" + imageName);
         return result;
+    }
+
+    public void setCaptureProcessor(WebsiteCaptureProcessor captureProcessor) {
+        this.captureProcessor = captureProcessor;
+    }
+
+    public void setSender(Sender sender) {
+        this.sender = sender;
     }
 }

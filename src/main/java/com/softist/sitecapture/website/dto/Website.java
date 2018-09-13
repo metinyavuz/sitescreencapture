@@ -11,7 +11,7 @@
  * Metin Yavuz(CreByM) Sep 10, 2018	Created
  *-----------------------------------------------------------
  */
-package com.fourdsight.sitecapture.website.dto;
+package com.softist.sitecapture.website.dto;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;

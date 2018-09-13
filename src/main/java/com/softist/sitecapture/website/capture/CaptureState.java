@@ -11,7 +11,7 @@
  * Metin Yavuz(CreByM) Sep 10, 2018	Created
  *-----------------------------------------------------------
  */
-package com.fourdsight.sitecapture.website.capture;
+package com.softist.sitecapture.website.capture;
 
 /**
  * @author Metin Yavuz(CreByM)

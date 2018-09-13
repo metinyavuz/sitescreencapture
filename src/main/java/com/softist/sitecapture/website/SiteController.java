@@ -11,11 +11,9 @@
  * Metin Yavuz(CreByM) Sep 10, 2018	Created
  *-----------------------------------------------------------
  */
-package com.fourdsight.sitecapture.website;
+package com.softist.sitecapture.website;
 
-import com.fourdsight.sitecapture.website.dto.Website;
-import com.fourdsight.sitecapture.website.util.ValidationUtil;
-import org.apache.commons.io.IOUtils;
+import com.softist.sitecapture.website.dto.Website;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,11 +21,6 @@ import org.springframework.http.*;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 
-import javax.imageio.ImageIO;
-import javax.servlet.http.HttpServletResponse;
-import java.awt.image.BufferedImage;
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;

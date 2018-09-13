@@ -11,7 +11,7 @@
  * Metin Yavuz(CreByM) Sep 10, 2018	Created
  *-----------------------------------------------------------
  */
-package com.fourdsight.sitecapture.mq;
+package com.softist.sitecapture.mq;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -11,11 +11,11 @@
  * Metin Yavuz(CreByM) Sep 10, 2018	Created
  *-----------------------------------------------------------
  */
-package com.fourdsight.sitecapture.mq;
+package com.softist.sitecapture.mq;
 
 import java.util.concurrent.CountDownLatch;
 
-import com.fourdsight.sitecapture.website.dto.Website;
+import com.softist.sitecapture.website.dto.Website;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.jms.annotation.JmsListener;

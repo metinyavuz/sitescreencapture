@@ -11,9 +11,9 @@
  * Metin Yavuz(CreByM) Sep 10, 2018	Created
  *-----------------------------------------------------------
  */
-package com.fourdsight.sitecapture.mq.config;
+package com.softist.sitecapture.mq.config;
 
-import com.fourdsight.sitecapture.mq.Sender;
+import com.softist.sitecapture.mq.Sender;
 import org.apache.activemq.ActiveMQConnectionFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

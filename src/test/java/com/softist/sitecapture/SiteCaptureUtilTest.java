@@ -11,10 +11,12 @@
  * Metin Yavuz(CreByM) Sep 10, 2018	Created
  *-----------------------------------------------------------
  */
-package com.fourdsight.sitecapture;
+package com.softist.sitecapture;
 
-import com.fourdsight.sitecapture.website.util.ValidationUtil;
+import com.softist.sitecapture.website.util.ValidationUtil;
 import static org.junit.Assert.*;
+
+import org.junit.Assert;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -33,7 +35,7 @@ public class SiteCaptureUtilTest {
         log.info("Checking valid file ");
         for (String fileName:validFilenames) {
             log.info("Check for " + fileName);
-            assertEquals(true,ValidationUtil.checkFileName(fileName));
+            Assert.assertEquals(true, ValidationUtil.checkFileName(fileName));
         }
 
         // Check invalid filenames

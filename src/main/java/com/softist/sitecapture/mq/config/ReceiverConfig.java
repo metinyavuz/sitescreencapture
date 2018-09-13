@@ -11,9 +11,9 @@
  * Metin Yavuz(CreByM) Sep 10, 2018	Created
  *-----------------------------------------------------------
  */
-package com.fourdsight.sitecapture.mq.config;
+package com.softist.sitecapture.mq.config;
 
-import com.fourdsight.sitecapture.mq.Receiver;
+import com.softist.sitecapture.mq.Receiver;
 import org.apache.activemq.ActiveMQConnectionFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
