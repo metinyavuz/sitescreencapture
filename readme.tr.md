@@ -1,7 +1,7 @@
 
 SITE CAPTURE:
 
-Uygulanma içerisinde ihtiyaçları ve kullanılan uygulamalar aşağıda listelenmiştir.
+Uygulama içerisinde ihtiyaçları ve kullanılan kütüphaneler aşağıda listelenmiştir.
 
 * selenium-java: Websitesi test için kullanılan paket WebDriver ile ekran görüntüleri alabilmektedir.
 	Bu uygulamada ChromeDriver kullanılmıştır.Nasıl kurulacağı farklı OS için ihtiyaçlar bölümünde anlatılımıştır.
