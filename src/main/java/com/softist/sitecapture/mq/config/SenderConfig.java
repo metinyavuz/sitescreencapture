@@ -32,27 +32,7 @@ public class SenderConfig {
 
     private Logger log = LoggerFactory.getLogger(this.getClass());
 
-    @Value("${activemq.broker-url}")
-    private String brokerUrl;
 
-    @Bean
-    public ActiveMQConnectionFactory activeMQConnectionFactory() {
-        ActiveMQConnectionFactory activeMQConnectionFactory = new ActiveMQConnectionFactory();
-        activeMQConnectionFactory.setBrokerURL(brokerUrl);
-        activeMQConnectionFactory.setTrustAllPackages(true);
-
-        return activeMQConnectionFactory;
-    }
-
-    @Bean
-    public CachingConnectionFactory cachingConnectionFactory() {
-        return new CachingConnectionFactory(activeMQConnectionFactory());
-    }
-
-    @Bean
-    public JmsTemplate jmsTemplate() {
-        return new JmsTemplate(cachingConnectionFactory());
-    }
 
     @Bean
     public Sender sender() {

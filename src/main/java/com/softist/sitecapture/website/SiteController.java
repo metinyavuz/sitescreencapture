@@ -17,11 +17,14 @@ import com.softist.sitecapture.website.dto.Website;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.*;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 import java.util.stream.Collectors;
@@ -41,13 +44,13 @@ public class SiteController {
 
     @PostMapping("capture")
     public ResponseEntity<?> captureSite(@RequestParam String[] urls) {
-        if (urls !=null) {
+        if (urls != null) {
             log.info("Capture request started urls size: " + urls.length);
             // Creating Future Stream
-            List<CompletableFuture<Website>> futures = new ArrayList();
-            for(String url:urls){
-                futures.add(websiteService.processSiteCapture(url));
-            }
+            List<CompletableFuture<Website>> futures =
+                    Arrays.stream(urls)
+                            .map(url -> websiteService.processSiteCapture(url))
+                            .collect(Collectors.toList());
 
             // Join All Future
             List<Website> websites =
@@ -61,7 +64,7 @@ public class SiteController {
         return ResponseEntity.noContent().build();
     }
 
-   @GetMapping("screenshot/{imageName}")
+    @GetMapping("screenshot/{imageName}")
     public ResponseEntity<byte[]> screenshot(@PathVariable String imageName) {
         if (StringUtils.hasText(imageName)) {
             byte[] image = websiteService.getWebsiteScreenShot(imageName);
@@ -69,7 +72,7 @@ public class SiteController {
                 HttpHeaders headers = new HttpHeaders();
                 headers.setContentType(MediaType.IMAGE_PNG);
 
-                return new ResponseEntity<byte[]> ( image, headers, HttpStatus.CREATED);
+                return new ResponseEntity<byte[]>(image, headers, HttpStatus.CREATED);
             } else
                 return ResponseEntity.notFound().build();
         }
