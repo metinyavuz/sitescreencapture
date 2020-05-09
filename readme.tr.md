@@ -33,7 +33,9 @@ App.properties kullanımları.
         
         Ek Bilgi için:
             https://github.com/SeleniumHQ/selenium/wiki/ChromeDriver
-
+            
+        Mac OS Sorun:
+            https://stackoverflow.com/questions/60362018/macos-catalinav-10-15-3-error-chromedriver-cannot-be-opened-because-the-de
 
 KURULUM VE ÇALIŞTIRMA:
 
